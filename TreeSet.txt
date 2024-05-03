@@ -1,0 +1,212 @@
+//------------------------------------------------------------------TreeSet-------------------------------------------------------------------
+
+//1. Create a TreeSet and add elements to it. Then, print the elements in sorted order.
+import java.util.Comparator;
+import java.util.TreeSet;
+import java.util.Set;
+
+public class HelloWorld{
+
+     public static void main(String []args){
+      
+      Set<Integer> treeSet = new TreeSet<>();
+      treeSet.add(4);
+      treeSet.add(3);
+      treeSet.add(1);
+      treeSet.add(2);
+      
+      System.out.println(treeSet);
+     }
+}
+//------------------------------------------------------------------------------------------------------------------------------------------------
+//2. Create a TreeSet of custom objects and implement the Comparable interface for sorting.
+
+/* Online Java Compiler and Editor */
+import java.util.Stack;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.TreeSet;
+import java.util.Set;
+
+public class HelloWorld{
+
+     public static void main(String []args){
+      
+      Set<Employee> treeSet = new TreeSet<>();
+      treeSet.add(new Employee(2,"Manoj",56000));
+      treeSet.add(new Employee(4,"Anuj",30000));
+      treeSet.add(new Employee(1,"Vijay",40000));
+      treeSet.add(new Employee(3,"Venu",74000));
+      
+      System.out.println(treeSet);
+     }
+}
+
+
+class Employee implements Comparable<Employee>{
+    private int empId;
+    private String name;
+    private Double salary;
+    
+    public Employee(int empId, String name, double salary)
+    {
+        this.empId = empId;
+        this.name = name;
+        this.salary = salary;
+    }
+    
+    public int getEmpId()
+    {
+        return this.empId;
+    }
+    
+    public void setEmpId(int empId)
+    {
+        this.empId = empId;
+    }
+    
+    public String getName()
+    {
+        return this.name;
+    }
+    
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+    
+    public Double getSalary()
+    {
+        return this.salary;
+    }
+    
+    public void setSalary(Double salary)
+    {
+        this.salary = salary;
+    }
+    
+    public int compareTo(Employee e)
+    {
+        return this.empId - e.getEmpId();
+    }
+    public String toString()
+    {
+        return "\n[ Emp Id = " + this.empId + " || Name = " + this.name + " || Salary = " + this.salary + " ]";
+    }
+ }
+
+ //--------------------------------------------------------------------------HashMap-------------------------------------------------------------------
+
+ //1. Create a HashMap to store the mappings of country names to their capitals.
+
+
+/* Online Java Compiler and Editor */
+import java.util.Set;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
+
+public class HelloWorld{
+
+     public static void main(String []args){
+        Map<String,String> set = new HashMap<>();
+        set.put("Russia", "Moscow");
+        set.put("United Kingdom","London");
+        set.put("Germany","Berlin");
+        set.put("Spain","Madrid");
+        set.put("Ukraine","Kiev");
+        set.put("Italy","Rome");
+        
+        System.out.println(set);
+     }
+}
+
+ //------------------------------------------------------------------------------------------------------------------------------------------------
+
+ //2. Create a HashMap to store the mappings of employee IDs to their names.
+
+ /* Online Java Compiler and Editor */
+import java.util.Stack;
+import java.util.Queue;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Comparator;
+
+public class HelloWorld{
+
+     public static void main(String []args){
+      
+      Map<Integer,String> map = new HashMap<>();
+      map.put(1,"Manu");
+      map.put(3,"Ajay");
+      map.put(2,"Anuj");
+      map.put(4,"Suraj");
+      
+      System.out.println(map);
+     }
+}
+
+//------------------------------------------------------------------------------------------------------------------------------------------------
+
+//3. Create a HashMap to store the mappings of city names to their populations.
+
+/* Online Java Compiler and Editor */
+import java.util.HashMap;
+import java.util.Map;
+
+public class HelloWorld{
+
+     public static void main(String []args){
+      
+      Map<String,Long> map = new HashMap<>();
+      map.put("Bangalore", 14008262333L);
+      map.put("Mumbai", 174686722111L);
+      map.put("Chennai", 1218534235L);
+      map.put("Pune", 28876567225L);
+      
+      System.out.println(map);
+     }
+}
+
+//------------------------------------------------------------------------------------------------------------------------------------------------
+
+//4. Create a HashMap to store the mappings of product names to their prices.
+
+/* Online Java Compiler and Editor */
+import java.util.HashMap;
+import java.util.Map;
+
+public class HelloWorld{
+
+     public static void main(String []args){
+      
+      Map<String,Double> map = new HashMap<>();
+      map.put("Sprite", 31.08);
+      map.put("Maaza",35.00);
+      map.put("Slice", 30.15);
+      map.put("Lays",10.00);
+      
+      System.out.println(map);
+     }
+}
+//------------------------------------------------------------------------------------------------------------------------------------------------
+
+//5. Create a HashMap to store the mappings of employee IDs to their departments.
+
+/* Online Java Compiler and Editor */
+import java.util.HashMap;
+import java.util.Map;
+
+public class HelloWorld{
+
+     public static void main(String []args){
+      
+      Map<Integer,String> map = new HashMap<>();
+      map.put(4,"Accounts");
+      map.put(3,"HR");
+      map.put(1,"Sales");
+      map.put(2,"Development");
+      
+      System.out.println(map);
+     }
+}
