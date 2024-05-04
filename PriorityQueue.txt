@@ -254,3 +254,57 @@ class Employee{
  //------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //6. Implement a Stack using the PriorityQueue class with a custom comparator.
+import java.util.*;
+
+public class Stack{
+
+    PriorityQueue<StackElement> pq = new PriorityQueue<>(10, new Comparator<StackElement>() 
+    {
+        public int compare(StackElement o1, StackElement o2 )
+        {
+            return o2.key - o1.key;
+        }
+    });
+    
+   int key=0; 
+    public void push(int data)
+    {
+        StackElement stackElement = new StackElement(key++,data);
+        pq.offer(stackElement);
+    }
+    
+    public Integer pull()
+    {
+        if(pq == null)
+        {
+            System.out.println("Under floww");
+            return null;
+        }
+        return pq.poll().value;
+        
+    }
+
+    
+     public static void main(String []args){
+         Stack s = new Stack();
+         s.push(2);
+         s.push(5);
+         s.push(90);
+         s.push(67);
+         System.out.println("---------------------------");
+         System.out.println(s.pull());
+         System.out.println(s.pull());
+         System.out.println(s.pull());
+     }
+}
+     
+class StackElement
+ {
+     int key;
+     int value;
+     StackElement(int key, int value)
+     {
+         this.key = key;
+         this.value = value;
+     }
+ }
