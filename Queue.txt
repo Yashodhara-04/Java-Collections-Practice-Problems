@@ -143,3 +143,57 @@ public class HelloWorld{
 //---------------------------------------------------------------------------------------------------------------------------------------------------------
 
 //5. Implement a Queue using the PriorityQueue class with a custom comparator.
+import java.util.*;
+
+public class Queue{
+
+    PriorityQueue<QueueElement> pq = new PriorityQueue<>(10, new Comparator<QueueElement>() 
+    {
+        public int compare(QueueElement o1, QueueElement o2 )
+        {
+            return o1.key - o2.key;
+        }
+    });
+    
+   int key=0; 
+    public void offer(int data)
+    {
+        QueueElement queueElement = new QueueElement(key++,data);
+        pq.offer(queueElement);
+    }
+    
+    public Integer poll()
+    {
+        if(pq == null)
+        {
+            System.out.println("Under floww");
+            return null;
+        }
+        return pq.poll().value;
+        
+    }
+
+    
+     public static void main(String []args){
+         Queue q = new Queue();
+         q.offer(2);
+         q.offer(5);
+         q.offer(90);
+         q.offer(67);
+         System.out.println("---------------------------");
+         System.out.println(q.poll());
+         System.out.println(q.poll());
+         System.out.println(q.poll());
+     }
+}
+     
+class QueueElement
+ {
+     int key;
+     int value;
+     QueueElement(int key, int value)
+     {
+         this.key = key;
+         this.value = value;
+     }
+ }
